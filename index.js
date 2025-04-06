@@ -172,7 +172,7 @@ function initializeWebSocketServer(server) {
         function authenticateWebSocket(ws, req, password, callback) {
             if (password === config.key) {
                 log.info('successful authentication on ws');
-                ws.send(`\r\n\u001b[33m[HydraD] \x1b[0mconnected!\r\n`);
+                ws.send(`\r\n\u001b[33m[draco] \x1b[0mconnected!\r\n`);
                 const urlParts = req.url.split('/');
                 const containerId = urlParts[2];
                 const volumeId = urlParts[3] || 0;
@@ -288,7 +288,7 @@ function initializeWebSocketServer(server) {
                 });
         
                 stream.on('end', () => {
-                    ws.send('\u001b[1m\u001b[33mcontainer@hydra~ \u001b[0mServer marked as Offline\r\n');
+                    ws.send('\u001b[1m\u001b[33mcontainer@draco~ \u001b[0mServer marked as Offline\r\n');
                 });
         
                 stream.on('error', (err) => {
@@ -313,11 +313,11 @@ function initializeWebSocketServer(server) {
             };
         
             if (!actionMap[action]) {
-                ws.send(`\r\n\u001b[33m[HydraD] \x1b[0Invalid action: ${action}\r\n`);
+                ws.send(`\r\n\u001b[33m[draco] \x1b[0Invalid action: ${action}\r\n`);
                 return;
             }
         
-            ws.send(`\r\n\u001b[33m[HydraD] \x1b[0mWorking on ${action}...\r\n`);
+            ws.send(`\r\n\u001b[33m[draco] \x1b[0mWorking on ${action}...\r\n`);
         
             try {
                 await actionMap[action]();
@@ -384,7 +384,7 @@ app.get('/', async (req, res) => {
         // Prepare the response object with Docker status
         const response = {
             versionFamily: 1,
-            versionRelease: 'HydraD ' + config.version,
+            versionRelease: 'draco ' + config.version,
             online: true,
             remote: config.remote,
             mysql: {
@@ -418,6 +418,6 @@ app.use((err, req, res, next) => {
 const port = config.port;
 setTimeout(function (){
   server.listen(port, () => {
-    log.info('HydraD is listening on port ' + port);
+    log.info('Draco is listening on port ' + port);
   });
 }, 2000);
