@@ -31,10 +31,9 @@ Contributions to enhance the functionality or performance of the Draco Daemon ar
 ## License
 (c) 2024 MJ and contributors. This software is licensed under the MIT License.
 
+## Credits  
+- **Developed by**: Aru1234rgb
+- **made by**: hopingboyz   
+- **Powered by**:  Aru1234rgb
+- **Special Thanks**: hopingboyz
 
-## Credits
-SRYDEN
-Skyport
-Hydra-Labes
-
-- Thanks ma4z,ether,achul123,privt
