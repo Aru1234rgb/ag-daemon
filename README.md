@@ -1,7 +1,7 @@
 
-<h1 align="center">DracoDaemon</h1>
+<h1 align="center">AGDaemon</h1>
 ## Overview
-Draco Daemon is the daemon for the Draco Panel.
+AG Daemon is the daemon for the Draco Panel.
 
 ## Installation
 1. Clone the repository:
